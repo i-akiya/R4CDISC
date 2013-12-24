@@ -16,17 +16,17 @@ Version: \tab 0.1\cr
 Date: \tab 2013-12-31\cr
 License: \tab LGL-3\cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
+R4CDISC package is provide functions to import SDS-XML and define.xml. SDS-XML is able to select  typed or untyped data format, however, R4CDISC package supports only untyped data format.\cr
+\cr
+It is supported SDS-XML ver. 1.0 draft and define.xml ver. 2.0 in this package.
 }
 \author{
-Ippei Akiya
-
-Maintainer: Ippei Akiya <yourfault@somewhere.net>
+Ippei Akiya\cr
+Maintainer: Ippei Akiya <ippei.aki@datadriven.jp>
 }
 \references{
-
+CDISC StudyDataSet-XML Specification Version 1.0 Draft (\url{http://www.cdisc.org/studydataset-xml})\cr
+CDISC Define-XML Specification Version 2.0 (\url{http://www.cdisc.org/define-xml})
 }
 
 \keyword{ CDISC }
-\examples{
-}

@@ -13,10 +13,10 @@ read.untyped.sds(sds_file, define_file)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{sds_file}{
-%%     ~~Describe \code{filename} here~~
+    Character string specifying the file path of sds.xml.
 }
   \item{define_file}{
-%%     ~~Describe \code{filename} here~~
+    Character string specifying the file path of define.xml.
 }
 
 }
