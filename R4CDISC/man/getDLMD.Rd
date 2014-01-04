@@ -2,7 +2,7 @@
 \alias{getDLMD}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Exract dataset level metadata from define.xml
+Exract dataset level metadata from Define-XML
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -14,7 +14,7 @@ getDLMD(filepath)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{filepath}{
-%%     ~~Describe \code{filepath} here~~
+Character string specifying the file path of define.xml.
 }
 }
 \details{
@@ -43,9 +43,11 @@ Ippei Akiya
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+define <- system.file("extdata", 
+                      "define2-0-0-example-sdtm(2013-11-09).xml", 
+                       package="R4CDISC"
+                       ) 
+DLMD <- getDLMD(define)
 
 }
 

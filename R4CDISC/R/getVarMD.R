@@ -61,6 +61,6 @@ getVarMD <- function( filepath ) {
                 )
     
     Variable.Metadata <- Variable.Metadata[so, ]
-    
+    row.names(Variable.Metadata) <- NULL
     return( Variable.Metadata )
 }

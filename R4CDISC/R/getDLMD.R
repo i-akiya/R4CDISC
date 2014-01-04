@@ -41,5 +41,6 @@ getDLMD <- function(filepath) {
                      IGD_Description,
                      IGD_title,
                      stringsAsFactors = FALSE)
+    row.names(df) <- NULL
     return(df)
 }

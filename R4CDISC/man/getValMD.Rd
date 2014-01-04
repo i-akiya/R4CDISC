@@ -1,14 +1,14 @@
-\name{getVarMD}
-\alias{getVarMD}
+\name{getValMD}
+\alias{getValMD}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Exract variable level metadata from Define-XML
+Exract value level metadata from Define-XML
 }
 \description{
-The getVarMD function supports define.xml version 2.0.
+The getValMD function supports define.xml version 2.0.
 }
 \usage{
-getVarMD(filepath)
+getValMD(filepath)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -47,7 +47,7 @@ define <- system.file("extdata",
                       "define2-0-0-example-sdtm(2013-11-09).xml", 
                        package="R4CDISC"
                        ) 
-VarMD <- getVarMD(define)
+ValMD <- getValMD(define)
 }
 
 

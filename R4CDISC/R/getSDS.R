@@ -22,9 +22,17 @@ getSDS <- function(xml_doc){
                           )
   
           if (i == ItemGroupDataSeq[1]){
-              temp_df <- data.frame(row_id, ItemOID, ID_Val, stringsAsFactors = FALSE)  
+              temp_df <- data.frame(row_id, 
+                                    ItemOID, 
+                                    ID_Val, 
+                                    stringsAsFactors = FALSE,
+                                    row.names = NULL)  
           }else{
-              cur_df <- data.frame(row_id, ItemOID, ID_Val, stringsAsFactors = FALSE)  
+              cur_df <- data.frame(row_id, 
+                                   ItemOID, 
+                                   ID_Val, 
+                                   stringsAsFactors = FALSE,
+                                   row.names = NULL)  
               temp_df <- merge(temp_df, cur_df, all = row_id)
           } 
       }

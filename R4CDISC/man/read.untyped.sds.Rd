@@ -5,7 +5,7 @@
 Read an untyped SDS-XML file as a data frame
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function returns study data as R dataframe converted from SDS-XML.
 }
 \usage{
 read.untyped.sds(sds_file, define_file)
@@ -21,14 +21,21 @@ read.untyped.sds(sds_file, define_file)
 
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This function supports untyped SDS-XML only.
+Variable types in returned dataframe are converted based following rule. \cr
+\tabular{lll}{
+ODM data type \tab  \tab R data type \cr
+string \tab  \tab character \cr
+integer \tab  \tab integer \cr
+float \tab  \tab double\cr
+date \tab  \tab character\cr
+time \tab  \tab character\cr
+datetime \tab  \tab character\cr
 }
+}
+
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+This function returns a dataframe.
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -46,20 +53,14 @@ Ippei Akiya
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-
 define <- system.file("extdata", 
                       "define2-0-0-example-sdtm(2013-11-09).xml", 
                        package="R4CDISC"
-) 
+                       ) 
 sds <- system.file("extdata", 
                    "dm.xml", 
-                   package="R4CDISC"
-) 
+                    package="R4CDISC"
+                    )
 
 DM <- read.untyped.sds(sds_file=sds, define_file=define)
 }
