@@ -1,6 +1,6 @@
 read.untyped.sds <-
     function( sds_file, define_file ){      
-        doc = xmlTreeParse(sds_file, useInternal = T)
+        doc = xmlTreeParse(sds_file, useInternalNodes = T)
         sds <- getSDS( doc )
         ItemGroupOID <- sds$IGOID
         df <- sds$sdsdata
@@ -9,9 +9,16 @@ read.untyped.sds <-
         # set variable order    
         variable.metadata <- getVarMD( define_file )
         variable.metadata_ <- subset(variable.metadata, 
-                                 variable.metadata$IGD_Name == unlist( strsplit(ItemGroupOID, "[.]" ))[2],
-                                 select = c( ID_Name, IR_OrderNumber )
+                                 variable.metadata$IGD_Name == unlist( strsplit(ItemGroupOID, "[.]" ))[2]
+                                 #select = c( ID_Name, IR_OrderNumber )
                               )
+        variable.metadata_ <- data.frame(
+                                variable.metadata_$ID_Name, 
+                                variable.metadata_$IR_OrderNumber,
+                                stringsAsFactors = FALSE,
+                                row.names = NULL
+                                )
+        names( variable.metadata_ ) <- c( "ID_Name", "IR_OrderNumber" )
         
         n.vars <- length( names( df ) )
         originalSeq <- c(1:n.vars)

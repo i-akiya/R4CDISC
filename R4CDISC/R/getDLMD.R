@@ -1,5 +1,5 @@
 getDLMD <- function(filepath) {
-    doc = xmlTreeParse(filepath, useInternal = T)
+    doc = xmlTreeParse(filepath, useInternalNodes = T)
     namespaces <- c(ns='http://www.cdisc.org/ns/odm/v1.3')
     
     #Dataset Level Metadata
