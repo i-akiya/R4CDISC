@@ -1,13 +1,13 @@
 getSDS <- function(xml_doc){
       namespaces <- c(ns='http://www.cdisc.org/ns/odm/v1.3', 
-                      sds='http://www.cdisc.org/ns/sds/v1.0')
+                      data='http://www.cdisc.org/ns/Dataset-XML/v1.0')
 
       ItemGroupData <- getNodeSet(xml_doc, "//ns:ItemGroupData", namespaces)
       ItemGroupDataSeq <- getItemGroupDataSeq( ItemGroupData )
       ItemGroupOID <- unique( getAttr(ItemGroupData, "ItemGroupOID") )
 
       for (i in ItemGroupDataSeq) {
-          xpath_stat <- paste('//ns:ItemGroupData[@sds:ItemGroupDataSeq="', 
+          xpath_stat <- paste('//ns:ItemGroupData[@data:ItemGroupDataSeq="', 
                               i, 
                               '"]/ns:ItemData', 
                               sep=""

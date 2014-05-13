@@ -1,25 +1,24 @@
-\name{read.untyped.sds}
-\alias{read.untyped.sds}
+\name{read.dataset.xml}
+\alias{read.dataset.xml}
 \title{
-Read an untyped SDS-XML file as a data frame
+Read a Dataset-XML file as a data frame
 }
 \description{
-This function returns study data as R dataframe converted from SDS-XML.
+This function returns study data as R dataframe converted from Dataset-XML.
 }
 \usage{
-read.untyped.sds(sds_file, define_file)
+read.dataset.xml(dataset_xml, define_xml)
 }
 \arguments{
-  \item{sds_file}{
-    Character string specifying the file path of sds.xml.
+  \item{dataset_xml}{
+    Character string specifying the file path of Dataset-XML.
 }
-  \item{define_file}{
-    Character string specifying the file path of define.xml.
+  \item{define_xml}{
+    Character string specifying the file path of Define-XML.
 }
 }
 \details{
-This function supports untyped SDS-XML only.
-Variable types in returned dataframe are converted based following rule. \cr
+Variable types in returned dataframe are converted based on following rule. \cr
 \tabular{lll}{
 ODM data type \tab  \tab R data type \cr
 string \tab  \tab character \cr
@@ -47,5 +46,5 @@ sds <- system.file("extdata",
                     package="R4CDISC"
                     )
 
-DM <- read.untyped.sds(sds_file=sds, define_file=define)
+DM <- read.dataset.xml(dataset_xml=sds, define_xml=define)
 }

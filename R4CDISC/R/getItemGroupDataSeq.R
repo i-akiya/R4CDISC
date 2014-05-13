@@ -2,7 +2,7 @@ getItemGroupDataSeq <-
 function( ItemGroupData ){
     sapply( ItemGroupData, 
             function(el) xmlGetAttr(el, 
-            'sds:ItemGroupDataSeq', 
+            'data:ItemGroupDataSeq', 
             default = ""
             )
     )

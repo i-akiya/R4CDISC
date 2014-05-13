@@ -6,7 +6,7 @@
 Read CDISC data files
 }
 \description{
-R4CDISC package includs functions for reading SDS-XML and Define.xml files.
+R4CDISC package includs functions for reading Dataset-XML and Define-XML files.
 }
 \details{
 \tabular{ll}{
@@ -16,19 +16,19 @@ Version: \tab 0.1\cr
 Date: \tab 2013-12-31\cr
 License: \tab LGL-3\cr
 }
-R4CDISC package is provide functions to import SDS-XML and define.xml. SDS-XML is able to select  typed or untyped data format, however, R4CDISC package supports only untyped data format.\cr
+R4CDISC package is provide functions to import Dataset-XML and Define-XML.
 \cr
-It is supported SDS-XML ver. 1.0 draft and define.xml ver. 2.0 in this package.
+It is supported Dataset-XML ver. 1.0 and Define-XML ver. 2.0 in this package.
 }
 \source{
-R4CDISC package includes example files both of SDS-XML and define-xml which were obtained from SDS-XML 1.0 DRAFT package on CDISC web site. \url{http://www.cdisc.org/studydataset-xml}
+R4CDISC package includes example files both of Dataset-XML and Define-XML which were obtained from Dataset-XML 1.0 package on CDISC web site. \url{http://www.cdisc.org/dataset-xml}
 }
 \author{
 Ippei Akiya\cr
 Maintainer: Ippei Akiya <ippei.aki@datadriven.jp>
 }
 \references{
-CDISC StudyDataSet-XML Specification Version 1.0 Draft (\url{http://www.cdisc.org/studydataset-xml})\cr
+CDISC Dataset-XML Specification Version 1.0 (\url{http://www.cdisc.org/dataset-xml})\cr
 CDISC Define-XML Specification Version 2.0 (\url{http://www.cdisc.org/define-xml})
 }
 

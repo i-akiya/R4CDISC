@@ -4,14 +4,14 @@
 Exract variable level metadata from Define-XML
 }
 \description{
-The getVarMD function supports define.xml version 2.0.
+The getVarMD function supports Define-XML version 2.0.
 }
 \usage{
 getVarMD(filepath)
 }
 \arguments{
   \item{filepath}{ 
-  Character string specifying the file path of define.xml. 
+  Character string specifying the file path of Define-XML. 
   }
 }
 \author{

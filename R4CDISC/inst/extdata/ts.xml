@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- StudyDataSet-XML: Untyped Data Example (DRAFT version)  --> 
+<!-- Dataset-XML: Untyped Data Example  --> 
 <!-- Built from the SAS XPT files published with the SDTM-MSG (SDTM Metadata Submission Guidelines) V1 --> 
 <!-- Prepared by Marcelina Hungria / DIcore Group, LLC --> 
 <ODM
   xmlns="http://www.cdisc.org/ns/odm/v1.3"
   xmlns:xlink="http://www.w3.org/1999/xlink" 
-  xmlns:sds="http://www.cdisc.org/ns/sds/v1.0"
+  xmlns:data="http://www.cdisc.org/ns/Dataset-XML/v1.0"
   FileType="Snapshot"
   ODMVersion="1.3.2"
-  sds:SDSVersion="1.0"
+  data:DatasetXMLVersion="1.0.0"
   FileOID="www.cdisc.org.Studycdisc01-Define-XML_2.0.0(IG.TS)"
-  PriorFileOID="www.cdisc.org.Studycdisc01-Define-XML_2.0.0(IG.TI)"
-  Originator="CDISC SDS-XML Team"
-  CreationDateTime="2013-11-13T17:26:14">
+  PriorFileOID="www.cdisc.org.Studycdisc01-Define-XML_2.0.0"
+  Originator="CDISC Dataset-XML Team"
+  CreationDateTime="2014-04-01T09:31:03">
   <ReferenceData
     StudyOID="cdisc01"
     MetaDataVersionOID="MDV.CDISC01.SDTMIG.3.1.2.SDTM.1.2">
     <!-- Dataset (TS) -->
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="1">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="1">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -25,7 +25,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Added on to Existing Treatments"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="N"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="2">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="2">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -33,7 +33,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Planned Maximum Age of Subjects"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="85"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="3">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="3">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -41,7 +41,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Planned Minimum Age of Subjects"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="18"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="4">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="4">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -49,7 +49,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Age Span"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="ADULT (18-65)"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="5">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="5">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="2"/>
@@ -57,7 +57,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Age Span"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="ELDERLY (&gt; 65)"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="6">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="6">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -65,7 +65,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Age Unit"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="YEARS"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="7">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="7">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -73,7 +73,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Dose per Administration"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="10"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="8">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="8">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="2"/>
@@ -81,7 +81,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Dose per Administration"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="20"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="9">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="9">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="3"/>
@@ -89,7 +89,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Dose per Administration"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="30"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="10">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="10">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="4"/>
@@ -97,7 +97,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Dose per Administration"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="40"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="11">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="11">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="5"/>
@@ -105,7 +105,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Dose per Administration"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="60"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="12">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="12">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -113,7 +113,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Dosing Frequency"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="QD"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="13">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="13">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -121,7 +121,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Dose Units"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="mg"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="14">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="14">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -129,7 +129,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Length"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="P36W"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="15">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="15">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -137,7 +137,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Primary Objective"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="EFFICACY AND SAFETY COMPARING 2 DOSES"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="16">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="16">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -145,7 +145,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Secondary Objective"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="SECONDARY OBJECTIVE CONCERNING RESPONSE"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="17">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="17">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -153,7 +153,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Planned Number of Subjects"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="80"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="18">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="18">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -161,7 +161,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial is Randomized"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="Y"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="19">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="19">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -169,7 +169,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Route of Administration"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="ORAL"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="20">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="20">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -177,7 +177,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Sex of Participants"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="BOTH"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="21">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="21">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -185,7 +185,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Clinical Study Sponsor"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="CDISC METADATA TEAM"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="22">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="22">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -193,7 +193,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Blinding Schema"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="DOUBLE BLIND"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="23">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="23">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -201,7 +201,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Control Type"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="PLACEBO"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="24">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="24">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -209,7 +209,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Indication Type"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="TREATMENT"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="25">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="25">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -217,7 +217,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Title"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="SAMPLE STUDY DEVELOPED TO DEMONSTRATE A SAMPLE SUBMISSION"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="26">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="26">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -225,7 +225,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Phase Classification"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="Phase III Trial"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="27">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="27">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -233,7 +233,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Investigational Therapy or Treatment"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="TEST PRODUCT XXX"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="28">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="28">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="1"/>
@@ -241,7 +241,7 @@
       <ItemData ItemOID="IT.TS.TSPARM" Value="Trial Type"/>
       <ItemData ItemOID="IT.TS.TSVAL" Value="EFFICACY"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.TS" sds:ItemGroupDataSeq="29">
+    <ItemGroupData ItemGroupOID="IG.TS" data:ItemGroupDataSeq="29">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.TS.DOMAIN" Value="TS"/>
       <ItemData ItemOID="IT.TS.TSSEQ" Value="2"/>

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- StudyDataSet-XML: Untyped Data Example (DRAFT version)  --> 
+<!-- Dataset-XML: Untyped Data Example  --> 
 <!-- Built from the SAS XPT files published with the SDTM-MSG (SDTM Metadata Submission Guidelines) V1 --> 
 <!-- Prepared by Marcelina Hungria / DIcore Group, LLC --> 
 <ODM
   xmlns="http://www.cdisc.org/ns/odm/v1.3"
   xmlns:xlink="http://www.w3.org/1999/xlink" 
-  xmlns:sds="http://www.cdisc.org/ns/sds/v1.0"
+  xmlns:data="http://www.cdisc.org/ns/Dataset-XML/v1.0"
   FileType="Snapshot"
   ODMVersion="1.3.2"
-  sds:SDSVersion="1.0"
+  data:DatasetXMLVersion="1.0.0"
   FileOID="www.cdisc.org.Studycdisc01-Define-XML_2.0.0(IG.QSCG)"
-  PriorFileOID="www.cdisc.org.Studycdisc01-Define-XML_2.0.0(IG.PE)"
-  Originator="CDISC SDS-XML Team"
-  CreationDateTime="2013-11-13T17:26:14">
+  PriorFileOID="www.cdisc.org.Studycdisc01-Define-XML_2.0.0"
+  Originator="CDISC Dataset-XML Team"
+  CreationDateTime="2014-04-01T09:31:03">
   <ClinicalData
     StudyOID="cdisc01"
     MetaDataVersionOID="MDV.CDISC01.SDTMIG.3.1.2.SDTM.1.2">
     <!-- Dataset (QSCG) -->
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="1">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="1">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.100008"/>
@@ -34,7 +34,7 @@
       <ItemData ItemOID="IT.QS.QSDTC" Value="2003-05-13"/>
       <ItemData ItemOID="IT.QS.QSDY" Value="15"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="2">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="2">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.100008"/>
@@ -51,7 +51,7 @@
       <ItemData ItemOID="IT.QS.QSDTC" Value="2003-10-13"/>
       <ItemData ItemOID="IT.QS.QSDY" Value="168"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="3">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="3">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.100014"/>
@@ -68,7 +68,7 @@
       <ItemData ItemOID="IT.QS.QSDTC" Value="2003-10-31"/>
       <ItemData ItemOID="IT.QS.QSDY" Value="17"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="4">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="4">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.100014"/>
@@ -85,7 +85,7 @@
       <ItemData ItemOID="IT.QS.QSDTC" Value="2004-03-30"/>
       <ItemData ItemOID="IT.QS.QSDY" Value="168"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="5">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="5">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.200001"/>
@@ -102,7 +102,7 @@
       <ItemData ItemOID="IT.QS.QSDTC" Value="2003-10-14"/>
       <ItemData ItemOID="IT.QS.QSDY" Value="15"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="6">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="6">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.200001"/>
@@ -119,7 +119,7 @@
       <ItemData ItemOID="IT.QS.QSDTC" Value="2004-02-02"/>
       <ItemData ItemOID="IT.QS.QSDY" Value="126"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="7">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="7">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.200002"/>
@@ -136,7 +136,7 @@
       <ItemData ItemOID="IT.QS.QSDTC" Value="2003-10-24"/>
       <ItemData ItemOID="IT.QS.QSDY" Value="15"/>
     </ItemGroupData>
-    <ItemGroupData ItemGroupOID="IG.QSCG" sds:ItemGroupDataSeq="8">
+    <ItemGroupData ItemGroupOID="IG.QSCG" data:ItemGroupDataSeq="8">
       <ItemData ItemOID="IT.STUDYID" Value="CDISC01"/>
       <ItemData ItemOID="IT.QS.DOMAIN" Value="QS"/>
       <ItemData ItemOID="IT.USUBJID" Value="CDISC01.200002"/>

@@ -1,4 +1,4 @@
-export(read.untyped.sds, 
+export(read.dataset.xml, 
        getDLMD, 
        getVarMD,
        getValMD
