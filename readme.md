@@ -15,7 +15,7 @@ R4CDISC is R package for import CDISC Dataset-XML and Define-XML as R data frame
 Run command, "install.package(R4CDISC)", in R console.
 
 ## Dependencies
-* [R](http://http://cran.r-project.org//) (>= 3.0.2)
+* [R](http://http://cran.r-project.org/) (>= 3.0.2)
 * [R package XML](http://cran.r-project.org/web/packages/XML/index.html) (>= 3.98-1.1)
 
 
