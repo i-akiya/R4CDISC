@@ -1,3 +1,5 @@
+import(XML)
+
 export(read.dataset.xml, 
        getDLMD, 
        getVarMD,
