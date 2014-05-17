@@ -16,67 +16,35 @@ variable.metadata <- getVarMD(define)
 #Get value level metadata
 value.metadata <- getValMD(define)
 
-#Get controlled terms
-controlled.terms <- getCT(define)
 
-
-# Excute unit tests for import Dataset-XML
+# Excute unit tests for import metadata
 
 # Check number of records
 test_that("Check number of records", {
     expect_equal(nrow(dataset.metadata), 34)
     expect_equal(nrow(variable.metadata[variable.metadata$IGD_Name == "LB",]), 28)
     expect_equal(nrow(value.metadata[value.metadata$ValueListOID == "VL.QS.QSORRES",]), 28)
-    expect_equal(nrow(controlled.terms[value.metadata$CT_OID == "CL.IETEST",]), 6)
 })
-CL.IETEST
 
 # Check number of colums
 test_that("Check number of colums", {
-    expect_equal(ncol(DM), 16)
+    expect_equal(ncol(dataset.metadata), 12)
+    expect_equal(ncol(variable.metadata), 10)
+    expect_equal(ncol(value.metadata), 9)
 })
-
-
-# Check culumn name
-test_that("Check a column name", {
-    expect_equal(names(DM)[5], "")
-})
-
 
 # Check character value 
 test_that("chech an imported value", {
-    expect_equal(DM[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(DM[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"AETERM"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"AETERM"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
+    expect_equal(dataset.metadata[3,"IGD_Name"], "TI")
+    expect_equal(dataset.metadata[8,"IGD_Structure"], "One record per actual visit per subject")
+    expect_equal(variable.metadata[variable.metadata$IR_ItemOID=="IT.EG.EGDTC","ID_DataType"], "date" )
+    expect_equal(variable.metadata[variable.metadata$IR_ItemOID=="IT.DS.DSCAT","IR_Mandatory"], "No")
+    expect_equal(value.metadata[value.metadata$IR_ItemOID=="IT.SC.SCORRES.MARISTAT","ID_DataType"], "text")
+    expect_equal(value.metadata[value.metadata$IR_ItemOID=="IT.VS.VSORRESU.WEIGHT.DM.COUNTRY.CMETRIC","ID_SASFieldName"], "WEIGHTU")
 })
-
 
 # Check integer value 
-test_that("chech integer value", {
-    expect_equal(DM[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(DM[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"AETERM"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"AETERM"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-})
-
-
-# Check float value 
-test_that("chech float value", {
-    expect_equal(DM[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(DM[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"AETERM"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"AETERM"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
-    expect_equal(AE[3,"USUBJID"], "CDISC01.200001")
+test_that("chech an imported value", {
+  expect_equal(variable.metadata[variable.metadata$IR_ItemOID=="IT.SE.SESEQ","IR_OrderNumber"], 4 )
+  expect_equal(value.metadata[value.metadata$IR_ItemOID=="IT.EG.EGORRES.QRSDUR","IR_OrderNumber"], 3)
 })

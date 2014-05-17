@@ -52,8 +52,8 @@ test_that("Check number of records", {
 # Check number of colums
 test_that("Check number of colums", {
     expect_equal(ncol(DM), 16)
-    expect_equal(ncol(AE), 8)
-    expect_equal(ncol(TV), 7)
+    expect_equal(ncol(AE), 18)
+    expect_equal(ncol(TV), 6)
 })
 
 
@@ -66,13 +66,13 @@ test_that("Check a column name", {
 
 
 # Check character value 
-test_that("chech an imported value", {
+test_that("check an imported value", {
     expect_equal(DM[3,"USUBJID"], "CDISC01.200001")
     expect_equal(DM[4,"ETHNIC"], "NOT HISPANIC OR LATINO")
-    expect_equal(AE[5,"AETERM"], "CDISC01.200001")
+    expect_equal(AE[5,"AETERM"], "HEMORRHOIDS")
     expect_equal(AE[15,"AEBODSYS"], "Musculoskeletal and connective tissue disorders")
     expect_equal(TV[1,"VISIT"], "SCREEN")
-    expect_equal(TV[3,"TVSTRL"], "End of treatment")
+    expect_equal(TV[3,"TVSTRL"], "End of week 2 treatment")
 })
 
 
