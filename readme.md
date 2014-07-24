@@ -19,7 +19,7 @@ Run command, "install.package(R4CDISC)", in R console.
 
 
 ## Example code
-### Import Define-XML
+### Import Dataset-XML
     library(R4CDISC)
     define <- system.file("extdata", 
                       "define2-0-0-example-sdtm(2013-11-09).xml", 
