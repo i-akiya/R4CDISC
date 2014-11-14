@@ -11,11 +11,14 @@ getItemDef <- function( Nodeset ){
     ID_Length <- getAttr(Nodeset=ItemDefNode, Attr="Length")
     ID_SASFieldName <- getAttr(Nodeset=ItemDefNode, Attr="SASFieldName")
     
-    ItemDefNode2 <- getNodeSet(Nodeset, "//ns:ItemDef", namespaces)
-    ID_Label <- getVal(ItemDefNode2, 'ns:Description/Description/TranslatedText[@xml:lang = "en"]')
+    ItemDefNode2 <- getNodeSet(Nodeset, "//ns:ItemDef/ns:Description", namespaces)
+    ID_Label <- getVal(ItemDefNode2, 'TranslatedText[@xml:lang = "en"]')
     
     ItemDefNode3 <- getNodeSet(Nodeset, "//ns:ItemDef//ns:CodeListRef", namespaces)
-    ID_CodeListOID <- getAttr(Nodeset=ItemDefNode3, Attr="CodeListOID")
+    ID_CodeListOID <<- getAttr(Nodeset=ItemDefNode3, Attr="CodeListOID")
+    
+    ItemDefNode4 <- getNodeSet(Nodeset, "//ns:ItemDef/def:Origin", namespaces)
+    ID_OriginDescription <<- getVal(ItemDefNode4, 'TranslatedText[@xml:lang = "en"]')
     
  
     df <- data.frame(
@@ -25,6 +28,8 @@ getItemDef <- function( Nodeset ){
         ID_DataType, 
         ID_Label, 
         ID_SASFieldName,
+        #ID_CodeListOID,
+        #ID_OriginDescription,
         stringsAsFactors = FALSE
         )
       

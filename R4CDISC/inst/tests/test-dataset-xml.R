@@ -5,12 +5,14 @@ library(testthat)
 
 ## Test data preparation 
 define <- system.file("extdata", 
+                      "SDTM",
                       "define2-0-0-example-sdtm(2013-11-09).xml", 
                       package="R4CDISC"
         　) 
 
 # Read DM file
 sds_dm <- system.file("extdata", 
+                      "SDTM",
                    "dm.xml", 
                    package="R4CDISC"
         　)
@@ -20,6 +22,7 @@ DM <- read.dataset.xml(dataset_xml=sds_dm, define_xml=define)
 
 # Read AE file
 sds_ae <- system.file("extdata", 
+                      "SDTM",
                       "ae.xml", 
                       package="R4CDISC" )
 AE <- read.dataset.xml(dataset_xml=sds_ae, define_xml=define)
@@ -27,6 +30,7 @@ AE <- read.dataset.xml(dataset_xml=sds_ae, define_xml=define)
 
 # Read LB file
 sds_lb <- system.file("extdata", 
+                      "SDTM",
                       "lb.xml", 
                       package="R4CDISC" )
 LB <- read.dataset.xml(dataset_xml=sds_lb, define_xml=define)
@@ -34,6 +38,7 @@ LB <- read.dataset.xml(dataset_xml=sds_lb, define_xml=define)
 
 # Read TV file
 sds_tv <- system.file("extdata", 
+                      "SDTM",
                       "tv.xml", 
                       package="R4CDISC")
 TV <- read.dataset.xml(dataset_xml=sds_tv, define_xml=define)
