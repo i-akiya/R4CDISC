@@ -3,6 +3,7 @@ import(XML)
 export(read.dataset.xml, 
        getDLMD, 
        getVarMD,
-       getValMD
+       getValMD,
+       getCT
        )
 

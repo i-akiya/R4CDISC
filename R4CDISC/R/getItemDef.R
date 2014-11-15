@@ -1,7 +1,6 @@
 getItemDef <- function( Nodeset ){
 
-    namespaces <- c( ns = 'http://www.cdisc.org/ns/odm/v1.3', 
-                    def = 'http://www.cdisc.org/ns/def/v2.0' )
+    namespaces <- namespaces()
     ItemDefNode <- getNodeSet(Nodeset, "//ns:ItemDef", namespaces)
     
     ID_OID <- getAttr(Nodeset=ItemDefNode, Attr="OID")
@@ -9,27 +8,35 @@ getItemDef <- function( Nodeset ){
     
     ID_DataType <- getAttr(Nodeset=ItemDefNode, Attr="DataType")
     ID_Length <- getAttr(Nodeset=ItemDefNode, Attr="Length")
+    ID_SignificantDigits <- getAttr(Nodeset=ItemDefNode, Attr="SignificantDigits")
     ID_SASFieldName <- getAttr(Nodeset=ItemDefNode, Attr="SASFieldName")
+    ID_SASFormatName <- getAttr(Nodeset=ItemDefNode, Attr="SASFormatName")
     
     ItemDefNode2 <- getNodeSet(Nodeset, "//ns:ItemDef/ns:Description", namespaces)
     ID_Label <- getVal(ItemDefNode2, 'TranslatedText[@xml:lang = "en"]')
     
-    ItemDefNode3 <- getNodeSet(Nodeset, "//ns:ItemDef//ns:CodeListRef", namespaces)
-    ID_CodeListOID <<- getAttr(Nodeset=ItemDefNode3, Attr="CodeListOID")
+    ID_CodeListOID <- getCodeListRef(ItemDefNode)
+
+    #ItemDefNode4 <- getNodeSet(Nodeset, "//ns:ItemDef/def:Origin", namespaces)
+    originList <- getOrigin(ItemDefNode)
+    ID_OriginType <- originList[[1]]
+    ID_OriginDescription <- originList[[2]]
+      
+    #getVal(ItemDefNode4, 'TranslatedText[@xml:lang = "en"]')
     
-    ItemDefNode4 <- getNodeSet(Nodeset, "//ns:ItemDef/def:Origin", namespaces)
-    ID_OriginDescription <<- getVal(ItemDefNode4, 'TranslatedText[@xml:lang = "en"]')
     
- 
     df <- data.frame(
         ID_OID,
         ID_Name, 
         ID_Length, 
+        ID_SignificantDigits,
         ID_DataType, 
         ID_Label, 
         ID_SASFieldName,
-        #ID_CodeListOID,
-        #ID_OriginDescription,
+        ID_SASFormatName,
+        ID_CodeListOID,
+        ID_OriginType,
+        ID_OriginDescription,
         stringsAsFactors = FALSE
         )
       
