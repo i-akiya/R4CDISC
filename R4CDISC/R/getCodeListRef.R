@@ -1,5 +1,5 @@
 getCodeListRef <- function(Nodeset){
-    namespaces <- namespace()
+    namespaces <- namespaces()
     clfVec <- c()
     
     for (i in 1:length(Nodeset)){
