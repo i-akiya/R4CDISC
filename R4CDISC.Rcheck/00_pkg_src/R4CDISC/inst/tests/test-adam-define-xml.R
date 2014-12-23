@@ -4,8 +4,8 @@ library(testthat)
 
 ## Test metadata preparation 
 define <- system.file("extdata",
-                      "SDTM",
-                      "define2-0-0-example-sdtm(2013-11-09).xml", 
+                      "ADaM",
+                      "define2-0-0-example-adam.xml", 
                       package="R4CDISC") 
 
 #Get dataset level metadata
@@ -24,8 +24,8 @@ ct.metadata <- getCT(define)
 
 # Check number of records
 test_that("Check number of records", {
-    expect_equal(nrow(dataset.metadata), 34)
-    expect_equal(nrow(variable.metadata[variable.metadata$IGD_Name == "LB",]), 28)
+    expect_equal(nrow(dataset.metadata), 2)
+    expect_equal(nrow(variable.metadata[variable.metadata$IGD_Name == "",]), 28)
     expect_equal(nrow(value.metadata[value.metadata$ValueListOID == "VL.QS.QSORRES",]), 28)
 })
 
