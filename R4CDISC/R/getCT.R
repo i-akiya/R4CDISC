@@ -12,26 +12,20 @@ print(i)
     
       if (is.null(cll$CodeListItem) == FALSE) {
         cl.oid <- cll$.attrs[["OID"]]
-        #names(cl.oid) <- NULL
         cl.name <- cll$.attrs[["Name"]]
-        #names(cl.name) <- NULL
         cl.datatype <- cll$.attrs[["DataType"]]
-        #names(cl.datatype) <- NULL
         cl.cltype <- "CodeListItem"
-        #names(cl.cltype) <- NULL
         # Alias
         if (is.null(cll$Alias[["Name"]]) == TRUE){
           cl.aname <- NA
         } else {
           cl.aname <- cll$Alias[["Name"]]
-          #names(cl.aname) <- NULL
         }
         # Context
         if (is.null(cll$Alias[["Context"]]) == TRUE){
           cl.acontext <- NA
         } else {
           cl.acontext <- cll$Alias["Context"]
-          #names(cl.acontext) <- NULL
         }
         cl.items <- list(cl.oid, 
                          cl.name, 
@@ -44,26 +38,20 @@ print(i)
      
       } else if (is.null(cll$EnumeratedItem) == FALSE) {
         cl.oid <- cll$.attrs[["OID"]]
-        #names(cl.oid) <- NULL
         cl.name <- cll$.attrs[["Name"]]
-        #names(cl.name) <- NULL
         cl.datatype <- cll$.attrs[["DataType"]]
-        #names(cl.datatype) <- NULL
         cl.cltype <- "EnumeratedItem"
-        #names(cl.cltype) <- NULL
         # Alias
         if (is.null(cll$Alias[["Name"]]) == TRUE){
           cl.aname <- NA
         } else {
           cl.aname <- cll$Alias[["Name"]]
-          #names(cl.aname) <- NULL
         }
         # Context
         if (is.null(cll$Alias[["Context"]]) == TRUE){
           cl.acontext <- NA
         } else {
           cl.acontext <- cll$Alias[["Context"]]
-          #names(cl.acontext) <- NULL
         }
         cl.items <- list(cl.oid, 
                          cl.name, 
@@ -74,7 +62,6 @@ print(i)
         names(cl.items) <- c("OID", "Name", "DataType", "CodeListType", "Alias", "Context")
         clList_temp <- c(CodeList = cl.items, item = getEnumeratedItem(cll))
       }
-print(clList_temp)
       clList <- c(clList, list(clList_temp))
     }
     
