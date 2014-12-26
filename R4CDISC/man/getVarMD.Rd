@@ -18,8 +18,8 @@ getVarMD(filepath)
 Ippei Akiya
 }
 \examples{
-define <- system.file("extdata", 
-                      "define2-0-0-example-sdtm(2013-11-09).xml", 
+define <- system.file("extdata", "ADaM",
+                      "define2-0-0-example-adam.xml", 
                        package="R4CDISC"
                        ) 
 VarMD <- getVarMD(define)

@@ -1,0 +1,29 @@
+\name{getCT}
+\alias{getCT}
+\title{
+Exract Controlled Terminology from Define-XML
+}
+\description{
+The getCT function supports define.xml version 2.0. This function returns controlled terms in define.xml as R list.
+
+}
+\usage{
+getCT(filepath)
+}
+\arguments{
+  \item{filepath}{
+Character string specifying the file path of define.xml.
+}
+}
+\author{
+Ippei Akiya
+}
+\examples{
+define <- system.file("extdata", "ADaM",
+                      "define2-0-0-example-adam.xml", 
+                       package="R4CDISC"
+                       ) 
+CT <- getCT(define)
+ct.1 <- as.data.frame(CT[[1]])
+
+}

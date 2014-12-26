@@ -51,3 +51,16 @@ test_that("chech an imported value", {
   expect_equal(variable.metadata[variable.metadata$IR_ItemOID=="IT.SE.SESEQ","IR_OrderNumber"], 4 )
   expect_equal(value.metadata[value.metadata$IR_ItemOID=="IT.EG.EGORRES.QRSDUR","IR_OrderNumber"], 3)
 })
+
+
+# Check code list value 
+test_that("check the controlled terminology", {
+    expect_equal(length(ct.metadata), 85 )
+    expect_equal(ct.metadata[[50]]$CodeList.OID, "CL.PE.DOMAIN")
+    expect_equal(ct.metadata[[30]]$CodeList.Alias, "C71113")
+    expect_equal(ct.metadata[[80]]$item.Decode[[2]], "Centimeter")
+})
+
+
+
+

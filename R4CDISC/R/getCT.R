@@ -7,7 +7,6 @@ getCT <- function( filepath ) {
     clList <- list()
     
     for ( i in 1:length(clNode) ){
-print(i)
       cll <- xmlToList(clNode[[i]])
     
       if (is.null(cll$CodeListItem) == FALSE) {
