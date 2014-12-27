@@ -37,6 +37,7 @@ This function returns a dataframe.
 Ippei Akiya
 }
 \examples{
+## Not run: 
 define <- system.file("extdata", "SDTM",
                       "define2-0-0-example-sdtm(2013-11-09).xml", 
                        package="R4CDISC"

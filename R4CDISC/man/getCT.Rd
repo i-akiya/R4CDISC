@@ -19,6 +19,7 @@ Character string specifying the file path of define.xml.
 Ippei Akiya
 }
 \examples{
+## Not run: 
 define <- system.file("extdata", "ADaM",
                       "define2-0-0-example-adam.xml", 
                        package="R4CDISC"
