@@ -9,4 +9,4 @@ Maintainer: Ippei Akiya <ippei.aki@datadriven.jp>
 URL: https://github.com/i-akiya/R4CDISC
 Description: CDISC Dataset-XML and Define-XML are used as file format for clinical trial data and metadata respectively. This functions supports reading both Dataset-XML and Define-XML.
 License: LGPL-3
-
+Suggests: testthat
