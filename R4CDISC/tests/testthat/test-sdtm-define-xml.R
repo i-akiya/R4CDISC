@@ -32,8 +32,8 @@ test_that("Check number of records", {
 # Check number of colums
 test_that("Check number of colums", {
     expect_equal(ncol(dataset.metadata), 12)
-    expect_equal(ncol(variable.metadata), 10)
-    expect_equal(ncol(value.metadata), 9)
+    expect_equal(ncol(variable.metadata), 15)
+    expect_equal(ncol(value.metadata), 14)
 })
 
 # Check character value 
