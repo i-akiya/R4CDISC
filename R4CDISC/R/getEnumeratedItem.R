@@ -7,7 +7,7 @@ getEnumeratedItem <- function(filepath){
     #Extract Code List OID as Collection
     CL.OIDs <- getAttr( Nodeset = clNode, Attr = "OID" )
     CL.Names <- getAttr( Nodeset = clNode, Attr = "Name" )
-    CL.DataTypes <- getAttr( Nodeset = clNode, Attr = "DataTypes" )
+    CL.DataTypes <- getAttr( Nodeset = clNode, Attr = "DataType" )
     CL.SASFormatNames <- getAttr( Nodeset = clNode, Attr = "SASFormatName" )
     
     
@@ -34,6 +34,7 @@ getEnumeratedItem <- function(filepath){
 
         CodedValue <- getAttr( Nodeset = enumItems, Attr = "CodedValue" )
         OrderNumber <- getAttr( Nodeset = enumItems, Attr = "OrderNumber" )
+        Rank <- getAttr( Nodeset = enumItems, Attr = "Rank" )
         ExtendedValue <- getAttr( Nodeset = enumItems, Attr = "def:ExtendedValue" )
         
         # get EnumeratedItem Alias
@@ -58,9 +59,10 @@ getEnumeratedItem <- function(filepath){
                          CodeListContext=CodeListContext,
                          CodedValue=CodedValue, 
                          OrderNumber=OrderNumber, 
+                         Rank=Rank, 
                          ExtendedValue=ExtendedValue,
-                         EnumeratedItemCode=EnumeratedItemCode,
-                         EnumeratedItemContext=EnumeratedItemContext)
+                         ItemCode=EnumeratedItemCode,
+                         ItemContext=EnumeratedItemContext)
         
         if ( i ==1 ){
             enumDF <- df
