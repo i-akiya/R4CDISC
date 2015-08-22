@@ -1,86 +1,90 @@
-getCodeListItem <- function(CodeListList){
-    numItem <- 0
-    # Count of CodeListItem
-    for (i in 1:length(CodeListList$CodeListItem)){
-      if (is.null(CodeListList[i]$CodeListItem) == FALSE){
-        numItem <- numItem + 1
-      }
-    }
-
-    CodedValue <- c()
-    Rank <- c()
-    OrderNumber <- c()
-    ExtendedValue <- c()
-    Decode <- c()
-    Alias <- c()
-    Context <- c()
+getCodeListItem <- function(filepath){
+    doc = xmlTreeParse( filepath, useInternalNodes = T )
+    ns <- namespaces()
     
-    for (i in 1:numItem){
-      # CodedValue
-      CodedValue.temp <- CodeListList[i]$CodeListItem$.attrs["CodedValue"]
-      if (is.null(CodedValue.temp) == TRUE){
-        CodedValue <- append(CodedValue, NA)
-      } else {
-        names(CodedValue.temp) <- NULL
-        CodedValue <- append(CodedValue, CodedValue.temp)
-      }
-      # Rank
-      Rank.temp <- CodeListList[i]$CodeListItem$.attrs["Rank"]
-      if (is.null(Rank.temp) == TRUE){
-        Rank <- append(Rank, NA)
-      } else {
-        names(Rank.temp) <- NULL
-        Rank <- append(Rank, Rank.temp)
-      }
-      # OrderNumber
-      OrderNumber.temp <- CodeListList[i]$CodeListItem$.attrs["OrderNumber"]
-      if (is.null(OrderNumber.temp) == TRUE){
-        OrderNumber <- append(OrderNumber, NA)
-      } else {
-        names(OrderNumber.temp) <- NULL
-        OrderNumber <- append(OrderNumber, OrderNumber.temp)
-      }
-# def:ExtendedValue
-      ExtendedValue.temp <- CodeListList[i]$CodeListItem$.attrs["def:ExtendedValue"]
-      if (is.null(ExtendedValue.temp) == TRUE){
-        ExtendedValue <- append(ExtendedValue, NA)
-      } else {
-        names(ExtendedValue.temp) <- NULL
-        ExtendedValue <- append(ExtendedValue, ExtendedValue.temp)
-      }
-      # Decode
-      Decode.temp <- CodeListList[i]$CodeListItem$Decode$TranslatedText$text
-      if (is.null(Decode.temp) == TRUE){
-        Decode <- append(Decode, NA)
-      } else {
-        names(Decode.temp) <- NULL
-        Decode <- append(Decode, Decode.temp)
-      }
-      # Alias
-      Alias.temp <- CodeListList[i]$CodeListItem$Alias["Name"]
-      if (is.null(Alias.temp) == TRUE){
-        Alias <- append(Alias, NA)
-      } else {
-        names(Alias.temp) <- NULL
-        Alias <- append(Alias, Alias.temp)
-      }
-      # Context
-      Context.temp <- CodeListList[i]$CodeListItem$Alias["Context"]
-      if (is.null(Context.temp) == TRUE){
-        Context <- append(Context, NA)
-      } else {
-        names(Context.temp) <- NULL
-        Context <- append(Context, Context.temp)
-      }
+    #Select CodeList nodeset including EnumeratedItem
+    clNode <- getNodeSet( doc, "//ns:CodeList[ns:CodeListItem]", ns )
+    #Extract Code List OID as Collection
+    CL.OIDs <- getAttr( Nodeset = clNode, Attr = "OID" )
+    CL.Names <- getAttr( Nodeset = clNode, Attr = "Name" )
+    CL.DataTypes <- getAttr( Nodeset = clNode, Attr = "DataType" )
+    CL.SASFormatNames <- getAttr( Nodeset = clNode, Attr = "SASFormatName" )
+    
+    
+    for ( i in 1:length(clNode) ){
+        # get attributes of CodeList element
+        OID <- CL.OIDs[i]
+        Name <- CL.Names[i]
+        DataType <- CL.DataTypes[i]
+        SASFormatName <- CL.SASFormatNames[i]
+        
+        # get attributes of CodeList Alias
+        doc2 <- xmlTreeParse(toString.XMLNode( clNode[[i]] ), useInternalNodes = T)
+        CodeListAlias <- getNodeSet( doc2, "/CodeList/Alias", ns )
+        if (length(CodeListAlias) > 0){
+            CodeListCode <- getAttr( Nodeset = CodeListAlias, Attr = "Name" )
+            CodeListContext <- getAttr( Nodeset = CodeListAlias, Attr = "Context" )
+        }else{
+            CodeListCode <- NA
+            CodeListContext <- NA
+        }
+        
+        # get CodeListItem
+        codelistItems <- getNodeSet( doc2, "//CodeListItem", ns )
+        
+        CodedValue <- getAttr( Nodeset = codelistItems, Attr = "CodedValue" )
+        #Decode = Decode
+        OrderNumber <- getAttr( Nodeset = codelistItems, Attr = "OrderNumber" )
+        Rank <- getAttr( Nodeset = codelistItems, Attr = "Rank" )
+        ExtendedValue <- getAttr( Nodeset = codelistItems, Attr = "def:ExtendedValue" )
+        
+        # get CodeListItem Alias
+        CodeListItemCode <- c()
+        CodeListItemContext <- c()
+        for (j in 1:length(codelistItems)){
+            codelistAlias <- getNodeSet( doc2, paste0("//CodeListItem[", j,  "]/Alias"), ns  )
+            if( length(codelistAlias)==0 ){
+                CodeListItemCode <- append(CodeListItemCode, NA)
+                CodeListItemContext <- append(CodeListItemContext, NA)
+            }else{
+                CodeListItemCode <- append(CodeListItemCode, getAttr( Nodeset = codelistAlias, Attr = "Name" ))
+                CodeListItemContext <- append(CodeListItemContext, getAttr( Nodeset = codelistAlias, Attr = "Context" ))
+            }
+        }
+        
+        # get CodeListItem Decode
+        CodeListItemDecode <- c()
+        for (k in 1:length(codelistItems)){
+            codelistDecode <- getNodeSet( doc2, paste0("//CodeListItem[", k,  "]/Decode") , ns )
+            if( length(codelistDecode)==0 ){
+                CodeListItemDecode <- append(CodeListItemDecode, NA)
+            }else{
+                CodeListItemDecode <- append(CodeListItemDecode, getVal( Nodeset = codelistDecode, xpath = 'TranslatedText[@xml:lang = "en"]' ))
+            }
+        }
+        
+        df <- data.frame(OID=OID, 
+                         Name=Name, 
+                         DataType=DataType, 
+                         SASFormatName=SASFormatName, 
+                         CodeListCode=CodeListCode, 
+                         CodeListContext=CodeListContext,
+                         CodedValue=CodedValue, 
+                         Decode=CodeListItemDecode,
+                         OrderNumber=OrderNumber, 
+                         Rank=Rank, 
+                         ExtendedValue=ExtendedValue,
+                         ItemCode=CodeListItemCode,
+                         ItemContext=CodeListItemContext,
+                         stringsAsFactors=FALSE)
+        
+        if ( i ==1 ){
+            codelistDF <- df
+        }else{
+            codelistDF <- rbind(codelistDF, df)
+        }
     }
-
-  item <- data.frame(CodedValue = CodedValue, 
-                        Rank = Rank,
-                        OrderNumber = OrderNumber,
-                        Decode = Decode,
-                        ExtendedValue = ExtendedValue,
-                        Alias = Alias,
-                        Context = Context,
-                        stringsAsFactors = FALSE)
-  return(item)
+    
+    return(codelistDF)
 }
+

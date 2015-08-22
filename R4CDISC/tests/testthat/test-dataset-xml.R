@@ -8,14 +8,14 @@ define <- system.file("extdata",
                       "SDTM",
                       "define2-0-0-example-sdtm(2013-11-09).xml", 
                       package="R4CDISC"
-        　) 
+) 
 
 # Read DM file
 sds_dm <- system.file("extdata", 
                       "SDTM",
                    "dm.xml", 
                    package="R4CDISC"
-        　)
+)
 
 DM <- read.dataset.xml(dataset_xml=sds_dm, define_xml=define)
 
