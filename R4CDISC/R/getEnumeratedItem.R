@@ -1,9 +1,9 @@
 getEnumeratedItem <- function(filepath){
     doc = xmlTreeParse( filepath, useInternalNodes = T )
-    namespaces <- namespaces()
+    ns <- namespaces()
     
     #Select CodeList nodeset including CodeListItem and EnumeratedItem
-    clNode <- getNodeSet( doc, "//ns:CodeList[ns:EnumeratedItem]", namespaces )
+    clNode <- getNodeSet( doc, "//ns:CodeList[ns:EnumeratedItem]", ns )
     #Extract Code List OID as Collection
     CL.OIDs <- getAttr( Nodeset = clNode, Attr = "OID" )
     CL.Names <- getAttr( Nodeset = clNode, Attr = "Name" )
@@ -20,7 +20,7 @@ getEnumeratedItem <- function(filepath){
         
         # get attributes of CodeList Alias
         doc2 <- xmlTreeParse(toString.XMLNode( clNode[[i]] ), useInternalNodes = T)
-        CodeListAlias <- getNodeSet( doc2, "/CodeList/Alias", namespaces )
+        CodeListAlias <- getNodeSet( doc2, "/CodeList/Alias", ns )
         if (length(CodeListAlias) > 0){
             CodeListCode <- getAttr( Nodeset = CodeListAlias, Attr = "Name" )
             CodeListContext <- getAttr( Nodeset = CodeListAlias, Attr = "Context" )
@@ -30,7 +30,7 @@ getEnumeratedItem <- function(filepath){
         }
         
         # get EnumeratedItem
-        enumItems <- getNodeSet( doc2, "//EnumeratedItem")
+        enumItems <- getNodeSet( doc2, "//EnumeratedItem", ns)
 
         CodedValue <- getAttr( Nodeset = enumItems, Attr = "CodedValue" )
         OrderNumber <- getAttr( Nodeset = enumItems, Attr = "OrderNumber" )
@@ -41,7 +41,7 @@ getEnumeratedItem <- function(filepath){
         EnumeratedItemCode <- c()
         EnumeratedItemContext <- c()
         for (j in 1:length(enumItems)){
-            enumAlias <- getNodeSet( doc2, paste0("//EnumeratedItem[", j,  "]/Alias") )
+            enumAlias <- getNodeSet( doc2, paste0("//EnumeratedItem[", j,  "]/Alias"), ns )
             if( length(enumAlias)==0 ){
                 EnumeratedItemCode <- append(EnumeratedItemCode, NA)
                 EnumeratedItemContext <- append(EnumeratedItemContext, NA)
@@ -62,7 +62,8 @@ getEnumeratedItem <- function(filepath){
                          Rank=Rank, 
                          ExtendedValue=ExtendedValue,
                          ItemCode=EnumeratedItemCode,
-                         ItemContext=EnumeratedItemContext)
+                         ItemContext=EnumeratedItemContext,
+                         stringsAsFactors=FALSE)
         
         if ( i ==1 ){
             enumDF <- df

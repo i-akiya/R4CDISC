@@ -4,7 +4,7 @@
 Exract Controlled Terminology from Define-XML
 }
 \description{
-The getCT function supports define.xml version 2.0. This function returns controlled terms in define.xml as R list.
+The getCT function supports define.xml version 2.0. This function returns controlled terms in define.xml as R dataframe.
 
 }
 \usage{
@@ -25,6 +25,5 @@ define <- system.file("extdata", "ADaM",
                        package="R4CDISC"
                        ) 
 CT <- getCT(define)
-ct.1 <- as.data.frame(CT[[1]])
 
 }

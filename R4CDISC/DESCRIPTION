@@ -2,8 +2,8 @@ Package: R4CDISC
 Type: Package
 Title: Read CDISC Data Files 
 Version: 0.4
-Date: 2015-7-30
-Depends: R (>= 3.0.2), XML
+Date: 2015-8-23
+Depends: R (>= 3.0.2), XML, dplyr
 Author: Ippei Akiya
 Maintainer: Ippei Akiya <ippei.aki@datadriven.jp>
 URL: https://github.com/i-akiya/R4CDISC

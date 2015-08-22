@@ -1,9 +1,9 @@
 getCodeListItem <- function(filepath){
     doc = xmlTreeParse( filepath, useInternalNodes = T )
-    namespaces <- namespaces()
+    ns <- namespaces()
     
     #Select CodeList nodeset including EnumeratedItem
-    clNode <- getNodeSet( doc, "//ns:CodeList[ns:CodeListItem]", namespaces )
+    clNode <- getNodeSet( doc, "//ns:CodeList[ns:CodeListItem]", ns )
     #Extract Code List OID as Collection
     CL.OIDs <- getAttr( Nodeset = clNode, Attr = "OID" )
     CL.Names <- getAttr( Nodeset = clNode, Attr = "Name" )
@@ -20,7 +20,7 @@ getCodeListItem <- function(filepath){
         
         # get attributes of CodeList Alias
         doc2 <- xmlTreeParse(toString.XMLNode( clNode[[i]] ), useInternalNodes = T)
-        CodeListAlias <- getNodeSet( doc2, "/CodeList/Alias", namespaces )
+        CodeListAlias <- getNodeSet( doc2, "/CodeList/Alias", ns )
         if (length(CodeListAlias) > 0){
             CodeListCode <- getAttr( Nodeset = CodeListAlias, Attr = "Name" )
             CodeListContext <- getAttr( Nodeset = CodeListAlias, Attr = "Context" )
@@ -30,19 +30,19 @@ getCodeListItem <- function(filepath){
         }
         
         # get CodeListItem
-        codelistItems <- getNodeSet( doc2, "//CodeListItem")
+        codelistItems <- getNodeSet( doc2, "//CodeListItem", ns )
         
         CodedValue <- getAttr( Nodeset = codelistItems, Attr = "CodedValue" )
         #Decode = Decode
         OrderNumber <- getAttr( Nodeset = codelistItems, Attr = "OrderNumber" )
-        Rank <- OrderNumber <- getAttr( Nodeset = codelistItems, Attr = "Rank" )
+        Rank <- getAttr( Nodeset = codelistItems, Attr = "Rank" )
         ExtendedValue <- getAttr( Nodeset = codelistItems, Attr = "def:ExtendedValue" )
         
         # get CodeListItem Alias
         CodeListItemCode <- c()
         CodeListItemContext <- c()
         for (j in 1:length(codelistItems)){
-            codelistAlias <- getNodeSet( doc2, paste0("//CodeListItem[", j,  "]/Alias") )
+            codelistAlias <- getNodeSet( doc2, paste0("//CodeListItem[", j,  "]/Alias"), ns  )
             if( length(codelistAlias)==0 ){
                 CodeListItemCode <- append(CodeListItemCode, NA)
                 CodeListItemContext <- append(CodeListItemContext, NA)
@@ -55,7 +55,7 @@ getCodeListItem <- function(filepath){
         # get CodeListItem Decode
         CodeListItemDecode <- c()
         for (k in 1:length(codelistItems)){
-            codelistDecode <- getNodeSet( doc2, paste0("//CodeListItem[", k,  "]/Decode") )
+            codelistDecode <- getNodeSet( doc2, paste0("//CodeListItem[", k,  "]/Decode") , ns )
             if( length(codelistDecode)==0 ){
                 CodeListItemDecode <- append(CodeListItemDecode, NA)
             }else{
@@ -75,7 +75,8 @@ getCodeListItem <- function(filepath){
                          Rank=Rank, 
                          ExtendedValue=ExtendedValue,
                          ItemCode=CodeListItemCode,
-                         ItemContext=CodeListItemContext)
+                         ItemContext=CodeListItemContext,
+                         stringsAsFactors=FALSE)
         
         if ( i ==1 ){
             codelistDF <- df

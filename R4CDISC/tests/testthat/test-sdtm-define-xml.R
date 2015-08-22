@@ -55,10 +55,12 @@ test_that("chech an imported value", {
 
 # Check code list value 
 test_that("check the controlled terminology", {
-    expect_equal(length(ct.metadata), 85 )
-    expect_equal(ct.metadata[[50]]$CodeList.OID, "CL.PE.DOMAIN")
-    expect_equal(ct.metadata[[30]]$CodeList.Alias, "C71113")
-    expect_equal(ct.metadata[[80]]$item.Decode[[2]], "Centimeter")
+    expect_equal(nrow(ct.metadata[ct.metadata$OID=="CL.MARISTAT", ]), 6 )
+    expect_equal(nrow(ct.metadata[ct.metadata$OID=="CL.TREASFF", ]), 11)
+    expect_equal(ct.metadata[ct.metadata$CodedValue=="Clinical Study Sponsor", "ItemCode"], "C70793")
+    expect_equal(ct.metadata[ct.metadata$CodedValue=="INSUFFICIENT RESPONSE", "OrderNumber"], "3")
+    expect_equal(ct.metadata[ct.metadata$CodedValue=="SEVERE", "Rank"], "3")
+    expect_equal(ct.metadata[ct.metadata$CodedValue=="MARISTAT", "Decode"], "Marital Status")
 })
 
 

@@ -48,10 +48,4 @@ test_that("check imported values", {
     expect_equal(value.metadata[value.metadata$IR_ItemOID=="IT.ADQSADAS.QSSEQ.ACTOT","ID_OriginType"], "Assigned")
 })
 
-# Check code list value 
-test_that("check the controlled terminology", {
-    expect_equal(length(ct.metadata), 24 )
-    expect_equal(ct.metadata[[3]]$CodeList.OID, "CL.AGEU")
-    expect_equal(ct.metadata[[18]]$CodeList.Alias, "C74457")
-    expect_equal(ct.metadata[[24]]$item.Decode, "Yes")
-    })
+
