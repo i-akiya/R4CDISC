@@ -7,6 +7,6 @@ Depends: R (>= 3.0.2), XML, dplyr
 Author: Ippei Akiya
 Maintainer: Ippei Akiya <ippei.aki@datadriven.jp>
 URL: https://github.com/i-akiya/R4CDISC
-Description: CDISC Dataset-XML and Define-XML are used as file format for clinical trial data and metadata respectively. This functions supports reading both Dataset-XML and Define-XML.
+Description: CDISC Dataset-XML and Define-XML are used as file format for clinical trial data and metadata respectively. This functions supports reading both Dataset-XML and Define-XML. The Clinical Data Interchange Standards Consortium (CDISC, http://www.cdisc.org/) is a standards developing organization (SDO) to develop global standards and innovations regarding medical research and healthcare. 
 License: LGPL-3
 Suggests: testthat
