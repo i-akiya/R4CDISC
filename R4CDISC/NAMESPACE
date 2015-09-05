@@ -1,5 +1,5 @@
 import(XML)
-
+importFrom("stats", "reshape")
 export(read.dataset.xml, 
        getDLMD, 
        getVarMD,
