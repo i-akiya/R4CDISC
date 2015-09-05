@@ -1,5 +1,6 @@
 import(XML)
 import(dplyr)
+import(stats)
 
 export(read.dataset.xml, 
        getDLMD, 

@@ -22,29 +22,29 @@ getSDS <- function(xml_doc){
                           )
   
           if (i == ItemGroupDataSeq[1]){
-              temp_df <- data.frame(row_id, 
+              temp_df_ <- data.frame(row_id, 
                                     ItemOID, 
                                     ID_Val, 
                                     stringsAsFactors = FALSE,
                                     row.names = NULL)  
           }else{
-              cur_df <- data.frame(row_id, 
+              cur_df_ <- data.frame(row_id, 
                                    ItemOID, 
                                    ID_Val, 
                                    stringsAsFactors = FALSE,
                                    row.names = NULL)  
-              temp_df <- merge(temp_df, cur_df, all = row_id)
+              temp_df_ <- merge(temp_df_, cur_df_, all = row_id)
           } 
       }
 
-    df <- reshape(temp_df, 
+    df_ <- reshape(temp_df_, 
                   timevar = "ItemOID", 
                   idvar = "row_id", 
                   direction = "wide"
           )
 
     # rename to variable name
-    i_oids <- names(df)
+    i_oids <- names(df_)
     for(i in c(1:length(i_oids)) ){
         splt <- unlist(strsplit(i_oids[[i]], '[.]'))
         varnm <- splt[length(splt)]
@@ -56,7 +56,7 @@ getSDS <- function(xml_doc){
         }
     }
     
-    names(df) <- var_names
-    df <- df[setdiff(colnames(df), "row_id")]
-    return( list(IGOID = ItemGroupOID, sdsdata = df ))
+    names(df_) <- var_names
+    df_ <- df_[setdiff(colnames(df_), "row_id")]
+    return( list(IGOID = ItemGroupOID, sdsdata = df_ ))
 }

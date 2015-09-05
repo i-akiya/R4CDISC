@@ -1,9 +1,8 @@
 getCT <- function( filepath ) {
     cl <- getCodeListItem(filepath)
     enu <- getEnumeratedItem(filepath)
-    
     mm <- merge(cl, enu, all=T, stringsAsFactors=FALSE)
-    mm <- mm %>% dplyr::arrange(OID, OrderNumber, Rank, CodedValue)
-    
-    return( mm )
+    sortlist <- order(mm$OID, mm$OrderNumber, mm$Rank, mm$CodedValue)
+    mm2 <- mm[sortlist,]
+    return( mm2 )
 }
