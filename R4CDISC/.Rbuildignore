@@ -1,8 +1,0 @@
-.DS_Store
-\.git/*
-README.md
-Makefile
-.*.tar.gz
-
-^.*\.Rproj$
-^\.Rproj\.user$
